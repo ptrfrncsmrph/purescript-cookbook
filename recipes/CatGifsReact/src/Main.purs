@@ -12,7 +12,6 @@ import Data.Either (Either(..))
 import Data.Maybe (Maybe(..))
 import Effect (Effect)
 import Effect.Aff (Aff)
-import Effect.Class.Console (log)
 import Effect.Exception (throw)
 import React.Basic.DOM (css, render)
 import React.Basic.DOM as R
@@ -38,13 +37,10 @@ reducer :: AffReducer GifState GifAction
 reducer state = case _ of
   MorePlease ->
     { state: Loading
-    , effects: [ getRandomCatGif <#> GotGif >>> singleton ]
+    , effects: [ (singleton <<< GotGif) <$> getRandomCatGif ]
     }
   GotGif result -> case result of
-    Right url ->
-      { state: Success url
-      , effects: []
-      }
+    Right url -> { state: Success url, effects: [] }
     Left _ -> { state: Failure, effects: [] }
 
 main :: Effect Unit
@@ -80,7 +76,6 @@ mkCatGifs = do
 
 getRandomCatGif :: Aff (Either String String)
 getRandomCatGif = do
-  log "Foo"
   response <-
     Affjax.get
       ResponseFormat.json

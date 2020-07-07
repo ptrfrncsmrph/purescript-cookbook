@@ -8,6 +8,8 @@
 /.purs*
 /.psa*
 /.spago
-/.cache
-
-pnpm-lock.yaml
+/.cache/
+/dist/
+/web-dist/
+/prod-dist/
+/prod/

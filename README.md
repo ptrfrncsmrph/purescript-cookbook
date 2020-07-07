@@ -10,7 +10,7 @@ If you want to contribute a new recipe, see the [CONTRIBUTING.md](./CONTRIBUTING
 
 ### Install Dependencies
 
-Install GNU Make, and verify installation with:
+Install GNU Make (version 4.0 or above), and verify installation with:
 ```
 make --version
 ```
@@ -66,11 +66,13 @@ Running a web-compatible recipe:
 |   | :heavy_check_mark: | [AddRemoveEventListener](recipes/AddRemoveEventListener) | This recipe shows how to add and remove an event listener to an HTML element. |
 | :heavy_check_mark: | :heavy_check_mark: | [BigInt](recipes/BigInt) | This recipe shows how to print, create, and use values of the `BigInt` type in either the node.js or web browser console. |
 |   | :heavy_check_mark: | [BookHalogen](recipes/BookHalogen) | A Halogen port of the ["HTTP - Book" Elm Example](https://elm-lang.org/examples). |
+|   | :heavy_check_mark: | [BookReact](recipes/BookReact) | A React port of the ["HTTP - Book" Elm Example](https://elm-lang.org/examples/book). |
 |   | :heavy_check_mark: | [ButtonsHalogen](recipes/ButtonsHalogen) | A Halogen port of the ["User Input - Buttons" Elm Example](https://elm-lang.org/examples). |
 |   | :heavy_check_mark: | [ButtonsReact](recipes/ButtonsReact) | A React port of the ["User Input - Buttons" Elm Example](https://elm-lang.org/examples/buttons). |
 |   | :heavy_check_mark: | [CardsHalogen](recipes/CardsHalogen) | A Halogen port of the ["Random - Cards" Elm Example](https://elm-lang.org/examples). |
 |   | :heavy_check_mark: | [CardsReact](recipes/CardsReact) | A React port of the ["Random - Cards" Elm Example](https://elm-lang.org/examples/cards). |
 |   | :heavy_check_mark: | [CatGifsHalogen](recipes/CatGifsHalogen) | A Halogen port of the ["HTTP - Cat GIFs" Elm Example](https://elm-lang.org/examples). |
+|   | :heavy_check_mark: | [CatGifsReact](recipes/CatGifsReact) | A React port of the ["HTTP - Cat GIFs" Elm Example](https://elm-lang.org/examples/cat-gifs). |
 | :heavy_check_mark: |   | [DiceCLI](recipes/DiceCLI) | This recipe shows how to create an interactive command line prompt that repeatedly generates a random number between 1 and 6. |
 | :heavy_check_mark: | :heavy_check_mark: | [DiceLog](recipes/DiceLog) | This recipe shows how to log a random integer between 1 and 6 (representing a roll of a die) in either the node.js or web browser console. |
 |   | :heavy_check_mark: | [FindDomElement](recipes/FindDomElement) | This recipe shows how to find elements in the DOM by using query selectors. |
