@@ -32,14 +32,14 @@ Follow these instructions for contributing new recipes. The Goal headers indicat
 
 #### Goal 3: Implement and Submit the Recipe
 
-1. Install all the tools (e.g. `purescript`, `spago`, `parcel`, `pnpm`) used in this repo by running `make installDeps`.
+1. Install all the tools (e.g. `purescript`, `spago`, `parcel`) used in this repo by running `make installDeps`.
 1. Install needed PureScript dependencies via `spago`.
     - Due to a [bug in Spago (#654)](https://github.com/purescript/spago/issues/654), follow these instructions:
         1. Change directory into your recipe folder: `cd recipes/MyRecipeName`
         1. Install dependencies as normal: `spago install <packageName>`
         1. Return to the root directory: `cd ../..`
     - **Note**: you can only install dependencies that exist in the latest package set release; you cannot add or override packages in `packages.dhall` (see Principles section for more contxt).
-1. Install needed `npm` dependencies via `npx pnpm i <packageName>`. These will be installed to the root folder's `node_modules` folder, not a corresponding folder in the recipe.
+1. Install needed `npm` dependencies via `npm i <packageName>`. These will be installed to the root folder's `node_modules` folder, not a corresponding folder in the recipe.
     - If you do install `npm` dependencies for your recipe, please state which libraries were installed in the recipe's `README.md` file.
 1. Implement your recipe. If you add any new modules, always start the module name with your recipe's "Unique Recipe Name" (e.g. `MyNewRecipe.Foo`, `MyNewRecipe.Module.Path.To.Cool.Types`)
     - Run `spago -x recipes/MyNewRecipe/spago.dhall build -w` while in the root folder for faster iteration while developing
@@ -77,7 +77,7 @@ A cookbook demonstrates how to do X. It does not explain why X works, the concep
 For context, this constraint is imposed on us by a limitation. Bundlers (e.g. `parcel`, `esbuild`) cannot find the corresponding `npm` dependency when bundling for the web backend. We fixed this by installing the npm dependency in the root folder's `package.json` file. This isn't ideal and we hope to find a solution that can remove this limitation in the future. However, this constraint will remain until such a solution is found.
 
 Nonetheless, let's say Recipe A through Recipe Y use version 1 of the npm dependency, `foo`, and Recipe Z wants to use version 2 of `foo`. Let's assume Recipes A-Y already exist, and someone submitted a PR to add Recipe Z. Will such a PR be accepted? Yes, provided the following is done:
-- in Recipe Z's PR, move Recipes A-Y into the repo's "broken" folder (if the folder doesn't exist, create it)
+- in Recipe Z's PR, move Recipes A-Y into the repo's "broken" folder
 - in this repo, open an issue for Recipes A-Y so we know to fix it later
 
 After CI passes and the following are done, we will merge the PR.
