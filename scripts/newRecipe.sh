@@ -32,7 +32,7 @@ echo "Creating new recipe $1 from $orig"
 set -x
 
 # Copy original recipe to new recipe directory
-cp -r recipes/$orig recipes/$1
+rsync -a --exclude=output recipes/$orig/ recipes/$1
 
 # Disable echo of all following script commands.
 # We used to be able to echo the substitution one-liner,
