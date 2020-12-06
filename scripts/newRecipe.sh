@@ -43,7 +43,7 @@ set +x
 echo "+ Substituting all occurrences of $orig in recipes/$1"
 for file in $(grep -rl $orig recipes/$1)
 do
-    sed "s/$orig/$1/g" $file > $file.new
+    LC_CTYPE=C sed "s/$orig/$1/g" $file > $file.new
     mv $file.new $file
 done
 # This used to be as simple as:
